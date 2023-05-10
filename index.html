@@ -22,10 +22,10 @@
   </style>
 
 <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <button class="button" id="btn1">播放音效</button>
-    <button class="button" id="btn2">停止音效</button>
-    <button class="button" id="btn3">停止影片</button>
-    <button class="button" id="btn4">播放影片</button>
+    <button class="button" id="btn1">Play Sound</button>
+    <button class="button" id="btn2">Stop Sound</button>
+    <button class="button" id="btn3">Stop Video</button>
+    <button class="button" id="btn4">Play Video</button>
    
   </div>
   
@@ -37,9 +37,9 @@
      
   <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
   
-     <!--影片1 --> 
-      <a-marker type='pattern' url='SFI.patt'>
-        <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="SFI.mp4"></video>
+      
+      <a-marker type='pattern' url='SPI.patt'>
+        <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="SPI.mp4"></video>
         <a-video src="#mivideo1" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
    
    <script> 
@@ -58,12 +58,15 @@
 
 
 document.getElementById("btn1").addEventListener("click", (e)=>{
+
   var v = document.querySelector('#mivideo1').muted=false;
 })
 document.getElementById("btn2").addEventListener("click", (e)=>{
+
   var v = document.querySelector('#mivideo1').muted=true;
 })
 document.getElementById("btn3").addEventListener("click", (e)=>{
+
   var v = document.querySelector('#mivideo1').pause();
 })
 document.getElementById("btn4").addEventListener("click", (e)=>{
@@ -72,20 +75,51 @@ document.getElementById("btn4").addEventListener("click", (e)=>{
 })
      </script>
       </a-marker>
+    
+    <a-marker type='pattern' url='pH adjustment tank_01.patt'>
+     <video id="mivideo2" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="pH adjustment tank_01.mp4"></video>
+    <a-video src="#mivideo2" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>  
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo2').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo2').pause();
+  
+})
 
 
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').play();
+})
+
+
+     </script>
+      </a-marker>     
+      
+      
       <a-entity camera></a-entity>
     </a-scene>
 </body>
-
-
-
-
-
-
-
-
-
 
 
 

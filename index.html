@@ -152,7 +152,86 @@ document.getElementById("btn4").addEventListener("click", (e)=>{
   var v = document.querySelector('#mivideo3').play();
 })
      </script>
+      </a-marker>  
+    
+<!--缺氧池電極棒定期清洗-->      
+      <a-marker type='pattern' url='AERC.patt'>
+        <video id="mivideo4" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="AERC.mp4"></video>
+        <a-video src="#mivideo4" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo4').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo4').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo4').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo4').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo4').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo4').play();
+})
+     </script>
       </a-marker>     
+
+<!--缺氧池電極棒清洗洗-->      
+      <a-marker type=pattern' url='AEC.patt'>
+        <video id="mivideo5" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="AEC.mp4"></video>
+        <a-video src="#mivideo5" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo5').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo5').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo5').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo5').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo5').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo5').play();
+})
+     </script>
+      </a-marker>     
+    
     
       <a-entity camera></a-entity>
     </a-scene>

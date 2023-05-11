@@ -232,6 +232,44 @@ document.getElementById("btn4").addEventListener("click", (e)=>{
      </script>
       </a-marker>     
     
+<!--二沉池回收水過濾器安裝-->      
+      <a-marker type='pattern' url='SFI.patt'>
+        <video id="mivideo6" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="SFI.mp4"></video>
+        <a-video src="#mivideo6" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo6').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo6').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo6').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo6').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo6').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo6').play();
+})
+     </script>
+      </a-marker>  
     
       <a-entity camera></a-entity>
     </a-scene>

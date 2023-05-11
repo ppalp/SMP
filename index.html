@@ -21,7 +21,7 @@
   
   </style>
 
-<div style='position: auto; top: 10px; width:100%; text-align: center; z-index: 1;'>
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
     <button class="button" id="btn1">Play Sound</button>
     <button class="button" id="btn2">Stop Sound</button>
     <button class="button" id="btn3">Stop Video</button>
@@ -37,9 +37,9 @@
      
   <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
   
-      
-      <a-marker type='pattern' url='SFI.patt'>
-        <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="SFI.mp4"></video>
+<!--發電機定期測試-->      
+      <a-marker type='pattern' url='DGRT.patt'>
+        <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="DGRT.mp4"></video>
         <a-video src="#mivideo1" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
    
    <script> 
@@ -76,7 +76,84 @@ document.getElementById("btn4").addEventListener("click", (e)=>{
      </script>
       </a-marker>
          
-      
+<!--電纜頭更換-->      
+      <a-marker type='pattern' url='CAC.patt'>
+        <video id="mivideo2" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="CAC.mp4"></video>
+        <a-video src="#mivideo2" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo2').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo2').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo2').play();
+})
+     </script>
+      </a-marker>  
+
+    <!--變電站高壓電纜頭更換-->      
+      <a-marker type='pattern' url='SCAC.patt'>
+        <video id="mivideo3" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="SCAC.mp4"></video>
+        <a-video src="#mivideo3" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo3').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo3').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo3').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo3').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo3').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo3').play();
+})
+     </script>
+      </a-marker>     
+    
       <a-entity camera></a-entity>
     </a-scene>
 </body>

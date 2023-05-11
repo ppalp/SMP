@@ -270,6 +270,123 @@ document.getElementById("btn4").addEventListener("click", (e)=>{
 })
      </script>
       </a-marker>  
+
+<!--天車定期巡檢-->      
+      <a-marker type='pattern' url='SRS.patt'>
+        <video id="mivideo7" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="SRS.mp4"></video>
+        <a-video src="#mivideo7" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo7').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo7').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo7').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo7').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo7').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo7').play();
+})
+     </script>
+      </a-marker>  
+    
+ <!--放流池監測馬達更換-->      
+      <a-marker type='pattern' url='EPC.patt'>
+        <video id="mivideo8" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="EPC.mp4"></video>
+        <a-video src="#mivideo8" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo8').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo8').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo8').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo8').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo8').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo8').play();
+})
+     </script>
+      </a-marker>
+
+    <!--泡藥機馬達安裝-->      
+      <a-marker type='pattern' url='DMMI.patt'>
+        <video id="mivideo9" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="DMMI.mp4"></video>
+        <a-video src="#mivideo9" position="0 0 0" scale="3 2 2" rotation="270 0 0" ></a-video>
+   
+   <script> 
+      var m = document.querySelector("a-marker")
+      m.addEventListener("markerFound", (e)=>{
+      console.log("found")
+      var v = document.querySelector('#mivideo9').play();
+   
+
+})
+      m.addEventListener("markerLost", (e)=>{
+      console.log("lost")
+      var v = document.querySelector('#mivideo9').pause();
+  
+})
+
+
+document.getElementById("btn1").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo9').muted=false;
+})
+document.getElementById("btn2").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo9').muted=true;
+})
+document.getElementById("btn3").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo9').pause();
+})
+document.getElementById("btn4").addEventListener("click", (e)=>{
+
+  var v = document.querySelector('#mivideo9').play();
+})
+     </script>
+      </a-marker>  
     
       <a-entity camera></a-entity>
     </a-scene>
